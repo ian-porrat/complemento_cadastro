@@ -1,0 +1,122 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+      <img class="navbar-brand-logo" src="assets/icons/logo-icon.svg" alt="">
+      <button class="navbar-brand-back">
+        <span class="navbar-brand-back-label">Voltar&nbsp;<span class="hidden-tablet">o para perfil</span></span>
+      </button>
+      <div class="navbar-info">
+        <div class="circularProgress --50">
+          <div class="circularProgress__overlay">
+            <span class="circularProgress__text">50%</span>
+          </div>
+        </div>
+        <div class="navbar-info-text">
+          <h1 class="h5 navbar-info-title-1">
+            Inscrição: Programa de Estágio TÉCNICO Unipar 2022
+          </h1>
+          <h5 class="small navbar-info-title-2">
+            Última atualização:
+          </h5>
+
+        </div>
+      </div>
+    </div>
+    <div class="navbar-extra">
+      <div class="navbar-extra-lang">
+      </div>
+      <button class="btn btn-sm btn-primary">
+        <img src="assets/icons/edit.svg" alt="" class="btn-icon">
+        <span>Editar perfil&nbsp;<span class="hidden-tablet"> completo</span></span>
+      </button>
+    </div>
+    <div class="navbar-menu-mobile">
+      <input id="menu-mobile-btn" class="menu-mobile-btn" type="checkbox" id="menu-mobile-btn" />
+      <label class="menu-mobile-icon" for="menu-mobile-btn"><span class="navicon"></span></label>
+      <div class="main-nav main-nav-mobile">
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item is-success" data-link="objetivos_e_interesses">
+            <img src="assets/icons/objetivos.svg" alt="">
+            Objetivos e Interesses
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item is-danger" data-link="dados_basicos">
+            <img src="assets/icons/dados-basicos.svg" alt="">
+            Dados básicos
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item" data-link="dados_complementares">
+            <img src="assets/icons/dados-complementares.svg" alt="">
+            Dados complementares
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item" data-link="jornada">
+            <img src="assets/icons/jornadas.svg" alt="">
+            Jornada - Gestão de projetos
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item" data-link="diversidade">
+            <img src="assets/icons/diversidade.svg" alt="">
+            Diversidade
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item" data-link="formacao">
+            <img src="assets/icons/formacao.svg" alt="">
+            Formação
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item" data-link="tecnologias_e_habilidades">
+            <img src="assets/icons/hardskills.svg" alt="">
+            Tecnologias e habilidades
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item" data-link="experiencias_e_atividades">
+            <img src="assets/icons/experiencia-profissional.svg" alt="">
+            Experiência & Atividades
+          </label>
+        </div>
+        <!-- Nav Item -->
+        <div class="main-nav_group">
+          <label class="main-nav_item" data-link="extra_questions">
+            <img src="assets/icons/extra-questions.svg" alt="">
+            Perguntas específicas
+          </label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    // Mobile Nav
+    $('#menu-mobile-btn').change(function(){
+      if ($(this).is(':checked')) {
+        $('body').css('overflow','hidden')
+      } else {
+        $('body').css('overflow','auto')
+      } 
+    });
+    // Navigation
+    $('.main-nav-mobile .main-nav_item').click(function(){
+      // Close mobile Nav
+      $('#menu-mobile-btn').prop( "checked", false );
+      // Load content
+        $.get("modules/" + $(this).attr("data-link") + ".html", function (data) {
+            $(".main-content").empty().prepend(data);
+        });
+    });
+  </script>
+  
