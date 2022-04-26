@@ -366,9 +366,12 @@ label {
             flex-direction: column;
         }
         .main-content-section {
+            gap: 15px;
             padding: 15px;
+            display: flex;
             border-radius: 15px;
             background: #fafafa;
+            flex-direction: column;
             backdrop-filter: blur(35px);
             border: 1.5px solid transparent;
             box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.02);
@@ -452,6 +455,7 @@ label {
     }
 }
 .btn {
+    gap: 5px;
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -482,6 +486,10 @@ label {
         border-radius: 8px;
     }
 
+    // Fluid
+    &.btn-fluid {
+        width: 100%;
+    }
     // Style
     &.btn-primary {
         border: none;

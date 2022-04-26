@@ -1,8 +1,14 @@
 .input-card-deck {
-    margin-top: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    > * {
+        width: 100%;
+    }
 }
 .input-card {
-    padding: 10px 15px;
+    gap: 10px;
+    padding: 15px;
     border-radius: 8px;
     background: #FEFDFD;
     border: 1px solid #E9E9E9;
@@ -12,15 +18,40 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: $viewport-tablet) { align-items: flex-start; flex-direction: column; }
+    }
+    &.input-card-flex-column {
+        display: flex;
+        flex-direction: column;
+        > * {
+            width: 100%;
+        }
+    }
+    &.input-card-flex-row {
+        display: flex;
+        flex-direction: row;
+        > * {
+            width: 100%;
+        }
+        @media (max-width: $viewport-tablet) { flex-direction: column; }
+    }
+    & > .input-card {
+        padding: 10px;
+        background: transparent;
+        border: 1px solid #EDEDED;
+        & > .input-card {
+            background: #FEFDFD;
+            border: 1px solid #E9E9E9;
+        }
     }
 }
 .input-group {
-    gap: 20px;
+    gap: 15px;
     display: flex;
     @media (max-width: $viewport-tablet) { flex-direction: column; }
-    & + .input-group {
-        margin-top: 20px;
-    }
+    // & + .input-group {
+        // margin-top: 20px;
+    // }
 }
 .input-wrapper {
     gap: 4px;
