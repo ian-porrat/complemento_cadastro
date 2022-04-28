@@ -7,18 +7,23 @@
     }
 }
 .input-card {
-    gap: 10px;
-    padding: 15px;
+    gap: 8px;
+    padding: 12px;
     border-radius: 8px;
     background: #FEFDFD;
     border: 1px solid #E9E9E9;
     box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.05);
+    
     &.input-card-phone {
         gap: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         @media (max-width: $viewport-tablet) { align-items: flex-start; flex-direction: column; }
+    }
+    &.input-card-featured {
+        background: $neutral-50;
+        border: 1px solid $neutral-100;
     }
     &.input-card-flex-column {
         display: flex;
@@ -157,10 +162,21 @@
             grid-template-rows: repeat(1, 1fr);
         }
     }
-
     &.radio-group-4 {
         grid-template-columns: repeat(4, 1fr);
         // grid-template-rows: repeat(4, 1fr);
+        @media (max-width: $viewport-tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        @media (max-width: $viewport-mobile) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+        }
+    }
+    &.radio-group-5 {
+        grid-template-columns: repeat(5, 1fr);
+        // grid-template-rows: repeat(5, 1fr);
         @media (max-width: $viewport-tablet) {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
@@ -182,9 +198,53 @@
             border: 2px solid $neutral-100;
             box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.05);
             transition: border 0.3s, transform 0.3s, box-shadow 0.3s;
+            .radio-card-body {
+                gap: 6px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .radio-card-label {
+                line-height: 135%;
+                color: $neutral-500;
+            }
+            .radio-card-btn {
+                padding: 8px;
+                display: flex;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 135%;
+                text-align: center;
+                color: $neutral-400;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #F2F2F2;
+                box-sizing: border-box;
+                border-radius: 8px;
+            }
+            // Icons
+            .radio-card-btn_default {
+                display: inline-block;
+            }
+            .radio-card-btn_selected, .radio-card-simplified-icon {
+                display: none;
+            }
+            // Vertical Card
+            &.radio-card-simplified {
+                gap: 4px;
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                
+            }
             // Vertical Card
             &.radio-card-vertical {
                 flex-direction: column;
+                .radio-card-body {
+                    align-items: stretch;
+                }
                 .radio-card-image {
                     width: 100%;
                     height: 120px;
@@ -203,6 +263,9 @@
                 gap: 12px;
                 width: 100%;
                 flex-direction: row;
+                .radio-card-body {
+                    align-items: flex-start;
+                }
                 .radio-card-image {
                     float: left;
                     width: 70px;
@@ -222,38 +285,7 @@
                 box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.1);
             }
         }
-        .radio-card-body {
-            gap: 6px;
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .radio-card-label {
-            line-height: 135%;
-            color: $neutral-500;
-        }
-        .radio-card-btn {
-            padding: 8px;
-            display: flex;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 135%;
-            text-align: center;
-            color: $neutral-400;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #F2F2F2;
-            box-sizing: border-box;
-            border-radius: 8px;
-            .radio-card-btn_default {
-                display: inline-block;
-            }
-            .radio-card-btn_selected {
-                display: none;
-            }
-        }
+        
         // Active
         .radio-card-input {
             display: none;
@@ -267,6 +299,11 @@
                     .radio-card-btn_selected {
                         display: inline-block;
                     }        
+                }
+                &.radio-card-simplified {
+                    .radio-card-simplified-icon {
+                        display: inline-block;
+                    }
                 }
             }
         }
