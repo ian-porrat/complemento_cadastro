@@ -56,9 +56,19 @@ body {
 }
 
 p {
-  color: #666666;
+  margin-top: 0;
   font-size: 15px;
   font-weight: 500;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+p:first-child {
+  margin-top: 15px;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 strong {
@@ -520,7 +530,6 @@ label {
       -ms-flex-align: center;
           align-items: center;
   background: white;
-  margin-top: 15px;
   border-radius: 9px;
   border: 1.5px solid transparent;
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
@@ -549,6 +558,8 @@ label {
   background: #FEFDFD;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1865,6 +1876,80 @@ small, .small {
 
 .radio-group .radio-card-wrapper .radio-card-input:checked ~ .radio-card.radio-card-simplified .radio-card-simplified-icon {
   display: inline-block;
+}
+
+.selectize-control.single .selectize-input {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #666666;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #E5E5E5;
+  -webkit-transition: background-color 0.15s, border-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: background-color 0.15s, border-color 0.15s, -webkit-box-shadow 0.15s;
+  transition: box-shadow 0.15s, background-color 0.15s, border-color 0.15s;
+  transition: box-shadow 0.15s, background-color 0.15s, border-color 0.15s, -webkit-box-shadow 0.15s;
+}
+
+.selectize-control.single .selectize-input > * {
+  font-size: 16px;
+  color: #808080;
+}
+
+.selectize-control.single .selectize-input::after {
+  top: 50% !important;
+  width: 20px !important;
+  height: 20px !important;
+  right: 10px !important;
+  content: '' !important;
+  display: block !important;
+  margin-top: -10px !important;
+  position: absolute !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  border: 1px solid rgba(236, 236, 236, 0.85) !important;
+  background-color: white !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-image: url(../assets/icons/icon-selectbox.svg) !important;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.selectize-control.single .selectize-input:hover {
+  outline: none;
+  border: 1px solid #CCCCCC;
+  -webkit-box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.1);
+}
+
+.selectize-control.single .selectize-input.input-active {
+  background: #F2F2F2;
+}
+
+.selectize-control.single .selectize-input.input-active::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.selectize-control.single .selectize-dropdown {
+  border: 1px solid #E5E5E5;
+  -webkit-box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+}
+
+.selectize-control.single [data-selectable] {
+  font-size: 14px;
+  padding: 4px;
+  color: #808080;
+}
+
+.selectize-control.single [data-selectable]:hover {
+  color: #225378;
+  background-color: #F2F2F2;
 }
 
 /*

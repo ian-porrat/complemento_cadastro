@@ -309,3 +309,65 @@
         }
     }
 }
+
+// Selectize Customization
+.selectize-control.single {
+    .selectize-input {
+        box-shadow: none;
+        color: $neutral-600;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: white;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid $neutral-100;    
+        transition: box-shadow 0.15s, background-color 0.15s, border-color 0.15s;
+        & > * {
+            font-size: 16px;
+            color: $neutral-500;
+        }
+        &::after {
+            top: 50% !important;
+            width: 20px !important;
+            height: 20px !important;
+            right: 10px !important;
+            content: '' !important;
+            display: block !important;
+            margin-top: -10px !important;
+            position: absolute !important;
+            border-radius: 50% !important;
+            pointer-events: none !important;
+            border: 1px solid rgba(236, 236, 236, 0.85) !important;
+            background-color: white !important;
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+            background-image: url(../assets/icons/icon-selectbox.svg) !important;
+            transform-origin: 50% 50%;
+        }
+        &:hover {
+            outline: none;
+            border: 1px solid $neutral-200;
+            box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.1);
+        }
+        &.input-active {
+            background: $neutral-50;
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .selectize-dropdown {
+        border: 1px solid $neutral-100;
+        box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.2);
+
+    }
+    [data-selectable] {
+        font-size: 14px;
+        padding: 4px;
+        color: $neutral-500;
+        &:hover {
+            color: $blue-dark;
+            background-color: $neutral-50;
+        }
+    }
+}

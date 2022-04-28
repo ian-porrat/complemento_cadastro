@@ -31,9 +31,17 @@ body {
     background-color: #F1F1F1;
 }
 p {
-    color: $neutral-600;
+    margin-top: 0;
     font-size: 15px;
-    font-weight: 500; 
+    font-weight: 500;
+    color: $neutral-600;
+    margin-bottom: 15px;
+    &:first-child {
+        margin-top: 15px;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 strong {
     font-weight: 600;
@@ -392,7 +400,6 @@ label {
                 flex-direction: row;
                 align-items: center;
                 background: $white;
-                margin-top: 15px;
                 border-radius: 9px;                
                 border: 1.5px solid transparent;
                 box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
@@ -413,6 +420,7 @@ label {
             display: inline-flex;
             background: #FEFDFD;
             box-sizing: border-box;
+            align-self: flex-start;
             justify-content: center;
             padding: 10px 10px 10px 8px;
             border: 1px solid #E9E9E9;
