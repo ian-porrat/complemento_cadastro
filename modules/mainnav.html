@@ -67,7 +67,7 @@
     <div class="main-nav_group">
       <input class="main-nav_input" type="radio" id="formacao" name="main-nav">
       <label class="main-nav_item" for="formacao">
-        <img src="assets/icons/formacao.svg" alt="">
+        <img src="assets/icons/cursos.svg" alt="">
         Formação
       </label>
       <div class="main-sub_nav">
@@ -115,11 +115,12 @@
 
 <script>
 $(document).ready(function(){
-    // $.get("modules/objetivos_e_interesses.html", function (data) {
-    $.get("modules/experiencias_e_atividades.html", function (data) {
-            $(".main-content").empty().prepend(data);
-        });
-
+    $.get("modules/extra_questions.html", function (data) {
+      $(".main-content").empty().prepend(data);
+    });
+    $.get("modules/modal.html", function (data) {
+      $("body").addClass("hasModal").append(data);
+    });
     $('input:radio[name="main-nav"]').change(function(){
         console.log("test");
         $.get("modules/" + $(this).attr("id") + ".html", function (data) {
@@ -127,4 +128,4 @@ $(document).ready(function(){
         });
     });
 })
-  </script>
+</script>

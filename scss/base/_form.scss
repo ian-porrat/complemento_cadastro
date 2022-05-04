@@ -41,10 +41,12 @@
         @media (max-width: $viewport-tablet) { flex-direction: column; }
     }
     & > .input-card {
+        width: 100%;
         padding: 10px;
         background: transparent;
         border: 1px solid #EDEDED;
         & > .input-card {
+            width: 100%;
             background: #FEFDFD;
             border: 1px solid #E9E9E9;
         }
@@ -74,6 +76,7 @@
     select,
     textarea,
     .merged-input {
+        width: 100%;
         color: $neutral-700;
         padding: 10px 12px;
         border-radius: 8px;
