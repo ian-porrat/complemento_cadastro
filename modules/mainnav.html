@@ -118,9 +118,9 @@ $(document).ready(function(){
     $.get("modules/extra_questions.html", function (data) {
       $(".main-content").empty().prepend(data);
     });
-    $.get("modules/modal.html", function (data) {
-      $("body").addClass("hasModal").append(data);
-    });
+    //$.get("modules/modal.html", function (data) {
+      //$("body").addClass("hasModal").append(data);
+    //});
     $('input:radio[name="main-nav"]').change(function(){
         console.log("test");
         $.get("modules/" + $(this).attr("id") + ".html", function (data) {
